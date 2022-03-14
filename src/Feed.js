@@ -11,6 +11,7 @@ import { db } from './firebase';
 import firebase from 'firebase/compat/app';
 import { selectUser } from './features/userSlice';
 import { useSelector } from 'react-redux';
+import FlipMove from 'react-flip-move';
 
 function Feed() {
 
@@ -60,6 +61,8 @@ function Feed() {
             </div>
         </div>
 
+        <FlipMove>
+
         {posts.map(({id, data: {name, description, message, photoUrl}})=> (
             <Post 
             key={id}
@@ -69,6 +72,9 @@ function Feed() {
             photoUrl={photoUrl}
             />
         ))}
+
+        </FlipMove>
+
        
     </div>
   )
